@@ -52,4 +52,15 @@ public class LlmClientPourGuideTouristique implements Serializable {
     public String envoyerRequete(String question) {
         return this.assistant.chat(question);
     }
+
+    /**
+     * Envoie une requête au LLM et retourne sa réponse, avec le nombre d'endroits à visiter.
+     *
+     * @param question la question de l'utilisateur (ville ou pays).
+     * @param nb nombre d'endroits à visiter.
+     * @return la réponse du LLM.
+     */
+    public String envoyerRequete(String question, int nb) {
+        return this.assistant.chatAvecNbEndroits(question, nb);
+    }
 }
